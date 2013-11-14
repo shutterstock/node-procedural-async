@@ -17,7 +17,7 @@ Book.prototype.author = "unknown";
 
 //---------------------------Controller logic---------------------------------------------
 
-var doSomething = function(){
+Bernhard.async(function(){
 
 
   var book = Book.findByTitle('some title');
@@ -26,8 +26,7 @@ var doSomething = function(){
   console.log("book is a Book: ", book instanceof Book);
 
 
-}.future();
-doSomething();
+});
 
 
 

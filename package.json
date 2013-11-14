@@ -1,0 +1,27 @@
+{
+  "name": "procedural-async",    
+  "description": "Write procedural style code that does async in the background",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git@github.shuttercorp.net:bkovacevich/node-procedural-async.git"
+  },
+  "dependencies": {
+    "underscore": "= 1.5.2",
+    "fibers": "= 1.0.1"
+  },
+  "main": "index.js",
+  "engines": { "node": ">=0.11.8" },
+  "keywords": [
+    "async",
+    "futures",
+    "proxy",
+    "procedural",
+    "fibers",
+    "easy"
+  ],
+  "contributors": ["dfenster", "cgomez"],
+  "bugs": {
+    "url": "https://github.shuttercorp.net/bkovacevich/node-procedural-async/issues"
+  }
+}

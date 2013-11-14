@@ -11,7 +11,7 @@
     "fibers": "= 1.0.1"
   },
   "main": "index.js",
-  "engines": { "node": ">=0.11.2" },
+  "engines": { "node": ">=0.11.8" },
   "keywords": [
     "async",
     "futures",

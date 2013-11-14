@@ -18,9 +18,14 @@ Book.prototype.author = "unknown";
 //---------------------------Controller logic---------------------------------------------
 
 var doSomething = function(){
-  var book = Book.findByTitle('some title');
 
-  console.log('author: ', book.author, new Book().author, book instanceof Book);
+
+  var book = Book.findByTitle('some title');
+  console.log('author: ', book.author);
+  console.log("default author: ", new Book().author);
+  console.log("book is a Book: ", book instanceof Book);
+
+
 }.future();
 doSomething();
 

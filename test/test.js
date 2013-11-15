@@ -110,6 +110,7 @@ describe("Asynchronous", function(){
       var b2 = slowReturn(20, new Date());
       assert.equal(b2.valueOf() + b.valueOf(), 30);
       assert(times[1] - times[0] < 100);
+      assert(new Date() - times[1] < 600);
       done();
     });
   });

@@ -118,6 +118,16 @@ describe("Scalars", function(){
       done();
     });    
   });
+  it('should act like an Array', function(done){
+    Bernhard.async(function(){
+      var b = slowReturn(["Hello", "World"], Array);
+      assert(b instanceof Array);
+      assert.equal(b.length, 2);
+      assert.equal(b[0], "Hello");
+      assert.equal(b[1], "World");
+      done();
+    });
+  });  
 });
 
 describe("Arrays", function(){

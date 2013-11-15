@@ -111,7 +111,12 @@ describe("Arrays", function(){
 describe("Errors", function(){
   it('should handle errors', function(done){
     Bernhard.async(function(){
-      var books = Book.findByTitle('THROW_ERROR');
+      try {
+        var books = Book.findByTitle('THROW_ERROR');
+      } catch (e) {
+        assert(/test-models.js/.test(e.stack));
+        assert.equal(e.message, 'YOU SHALL NOT PASS!');
+      }
       done();
     });
   });

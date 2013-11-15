@@ -1,43 +1,7 @@
 'use strict';
 var assert = require('assert');
 var Bernhard = require('../lib');
-
-  function Book(){
-  }
-
-  Book.findByTitle = function findByTitle(title){
-    var b = new Bernhard.generate(Book); 
-    mysql.query("SELECT SOMETHING", [title], function(err, results){
-      b.callback(err, results[0]);
-    });
-    return b;
-  }
-
-  Book.findByAuthor = function findByAuthor(author){
-    var b = new Bernhard.generate(Array);
-    mysql.query("SELECT MANY THINGS", [author], b.callback);
-    return b;
-  }
-
-  Book.prototype.author = "unknown";
-
-  var mysql = {
-    query: function(sql, params, callback){
-      if(/SOMETHING/.test(sql)){
-        setTimeout(function(){
-          return callback(null, [{title: params[0], author: "Some Guy"}])
-        }, 500);
-      } else {
-        setTimeout(function(){
-          return callback(null, [
-            {author: params[0], title: "The Fellowship of the Ring"},
-            {author: params[0], title: "The Two Towers"},
-            {author: params[0], title: "The Return of the King"},
-          ]);
-        }, 1000);
-      }
-    }
-  }
+var Book = require('../support/test-models').Book;
 
 describe("Basic OO", function(){
   it('should wait to complete before returning attribute values', function (done){

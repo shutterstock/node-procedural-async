@@ -72,9 +72,7 @@ describe("Scalars", function(){
     }, 500);
     return b;
   };
-  var slowReturn = function(value){
-    var type = typeof value;
-    type = eval(type.charAt(0).toUpperCase() + type.slice(1));
+  var slowReturn = function(value, type){
     var b = new Bernhard.generate(type);
     setTimeout(function(){
       return b.callback(null, value);
@@ -92,16 +90,17 @@ describe("Scalars", function(){
   });
   it('should act like a String', function(done){
     Bernhard.async(function(){
-      var b = slowReturn("Hello");
+      var b = slowReturn("Hello", String);
       assert(b instanceof String);
       assert.equal(b, "Hello");
+      assert.equal(b.length, "Hello".length)
       done();
     });
   });
   it('should act like a Boolean', function(done){
     Bernhard.async(function(){
-      var bfalse = slowReturn(false);
-      var btrue = slowReturn(true);
+      var bfalse = slowReturn(false, Boolean);
+      var btrue = slowReturn(true, Boolean);
       assert(bfalse instanceof Boolean);
       assert(btrue instanceof Boolean);
       assert.equal(bfalse, false);
@@ -111,10 +110,11 @@ describe("Scalars", function(){
   }); 
   it('should act like a Date', function(done){
     Bernhard.async(function(){
-      var date = new Date();
-      var b = slowReturn(date);
+      var date = new Date(1384486511617);
+      var b = slowReturn(date, Date);
       assert(b instanceof Date);
-      assert.equal(b, date);
+      assert.equal(b, date.valueOf()); //in all javascript, a date is not equal to its integer value in milliseconds
+      // assert.equal(b.getTime(), +date);
       done();
     });    
   });

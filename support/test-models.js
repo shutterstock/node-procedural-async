@@ -114,9 +114,9 @@ var mysql = {
     } else {
       setTimeout(function(){
         return callback(null, [
-          {author: params[0], title: "The Fellowship of the Ring"},
-          {author: params[0], title: "The Two Towers"},
-          {author: params[0], title: "The Return of the King"},
+          {id: 1, author: params[0], title: "The Fellowship of the Ring"},
+          {id: 2, author: params[0], title: "The Two Towers"},
+          {id: 3, author: params[0], title: "The Return of the King"},
         ]);
       }, 1000);
     }

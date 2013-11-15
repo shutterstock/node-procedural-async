@@ -99,13 +99,15 @@ describe("Arrays", function(){
       var books = Book.findByAuthor('Tolkien');
       assert(books instanceof Array);
       assert.equal(books.length, 3);
-      var counter = 0;
+      var results = [];
       for (var i in books) {
-        assert(books[i]);
-        counter++;
+        results.push(books[i].id);
       }
-      assert.equal(counter, 3)
-      // books.map();
+      assert.deepEqual([1,2,3], results);
+      results = books.map(function (book){
+        return book.id
+      });
+      assert.deepEqual([1,2,3], results);
       done();
     });
   })

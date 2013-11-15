@@ -122,6 +122,7 @@ describe("Scalars", function(){
       assert.equal(b.length, 2);
       assert.equal(b[0], "Hello");
       assert.equal(b[1], "World");
+      assert.deepEqual(b.valueOf(), ["Hello", "World"]);
       done();
     });
   });  

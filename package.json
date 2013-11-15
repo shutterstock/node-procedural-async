@@ -10,6 +10,10 @@
     "underscore": "= 1.5.2",
     "fibers": "= 1.0.1"
   },
+  "devDependencies": {
+   "mocha": "1.14.0",
+   "should": ">= 0.0.1"
+  },
   "main": "index.js",
   "engines": { "node": ">=0.11.8" },
   "keywords": [
@@ -23,5 +27,8 @@
   "contributors": ["dfenster", "cgomez"],
   "bugs": {
     "url": "https://github.shuttercorp.net/bkovacevich/node-procedural-async/issues"
-  }
+  },
+  "scripts": {
+   "test": "node_modules/.bin/mocha -w"
+ }
 }

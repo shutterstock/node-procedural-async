@@ -14,7 +14,7 @@ var Bernhard = require('../lib');
   }
 
   Book.findByAuthor = function findByAuthor(author){
-    var b = new Bernhard.generate(Book, true);
+    var b = new Bernhard.generate(Array, true);
     mysql.query("SELECT MANY THINGS", [author], b.callback);
   }
 
@@ -37,9 +37,6 @@ var Bernhard = require('../lib');
       }
     }
   }
-
-
-
 
 describe("Basic OO", function(){
   it('should wait to complete before returning attribute values', function (done){

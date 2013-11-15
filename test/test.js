@@ -14,8 +14,9 @@ var Bernhard = require('../lib');
   }
 
   Book.findByAuthor = function findByAuthor(author){
-    var b = new Bernhard.generate(Array, true);
+    var b = new Bernhard.generate(Array);
     mysql.query("SELECT MANY THINGS", [author], b.callback);
+    return b;
   }
 
   Book.prototype.author = "unknown";
@@ -132,7 +133,12 @@ describe("Arrays", function(){
   it('should generally work for arrays', function(done){
     Bernhard.async(function(){
       var books = Book.findByAuthor('Tolkien');
+      assert(books instanceof Array);
       assert.equal(books.length, 3);
+      for (var i in books) {
+        console.log(books[i]);
+        assert(books[i]);
+      }
       done();
     });
   })

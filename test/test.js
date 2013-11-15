@@ -66,14 +66,23 @@ describe("Basic OO", function(){
 
 describe("Scalars", function(){
   var slowAddTwoNumbers = function(first, second){
-    var b = new Bernhard.generate(Number, false);
+    var b = new Bernhard.generate(Number);
     setTimeout(function(){
       return b.callback(null, first + second);
     }, 500);
     return b;
   };
+  var slowReturn = function(value){
+    var type = typeof value;
+    type = eval(type.charAt(0).toUpperCase() + type.slice(1));
+    var b = new Bernhard.generate(type);
+    setTimeout(function(){
+      return b.callback(null, value);
+    }, 500);
+    return b;
+  };
 
-  it('should be an instance of Number', function(done){
+  it('should act like a Number', function(done){
     Bernhard.async(function(){
       var b = slowAddTwoNumbers(2, 2);
       assert(b instanceof Number);
@@ -81,13 +90,41 @@ describe("Scalars", function(){
       done();
     });
   });
+  it('should act like a String', function(done){
+    Bernhard.async(function(){
+      var b = slowReturn("Hello");
+      assert(b instanceof String);
+      assert.equal(b, "Hello");
+      done();
+    });
+  });
+  it('should act like a Boolean', function(done){
+    Bernhard.async(function(){
+      var bfalse = slowReturn(false);
+      var btrue = slowReturn(true);
+      assert(bfalse instanceof Boolean);
+      assert(btrue instanceof Boolean);
+      assert.equal(bfalse, false);
+      assert.equal(btrue, true);
+      done();
+    });
+  }); 
+  it('should act like a Date', function(done){
+    Bernhard.async(function(){
+      var date = new Date();
+      var b = slowReturn(date);
+      assert(b instanceof Date);
+      assert.equal(b, date);
+      done();
+    });    
+  });
 });
 
 describe("Arrays", function(){
   it('should generally work for arrays', function(done){
     Bernhard.async(function(){
       var books = Book.findByAuthor('Tolkien');
-      assert.equal(book.length, 3);
+      assert.equal(books.length, 3);
       done();
     });
   })

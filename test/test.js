@@ -45,13 +45,13 @@ describe("Basic OO", function(){
   it('should wait to complete before returning attribute values', function (done){
     Bernhard.async(function(){
       var book = Book.findByTitle('some title');
-      assert(book.author, "Some Guy");
+      assert.equal(book.author, "Some Guy");
       done();
     });
   });
   it('should allow for default values without waiting', function (done){
     Bernhard.async(function(){
-      assert(new Book().author, "unknown");
+      assert.equal(new Book().author, "unknown");
       done();
     });
   });

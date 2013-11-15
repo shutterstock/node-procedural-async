@@ -1,10 +1,10 @@
 {
   "name": "procedural-async",    
   "description": "Write procedural style code that does async in the background",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": {
     "type": "git",
-    "url": "git@github.shuttercorp.net:bkovacevich/node-procedural-async.git"
+    "url": "https://github.com/shutterstock/node-procedural-async"
   },
   "dependencies": {
     "underscore": "= 1.5.2",
@@ -25,7 +25,7 @@
   ],
   "contributors": ["dfenster", "cgomez"],
   "bugs": {
-    "url": "https://github.shuttercorp.net/bkovacevich/node-procedural-async/issues"
+    "url": "https://github.com/shutterstock/node-procedural-async/issues"
   },
   "scripts": {
    "test": "node_modules/.bin/mocha --harmony"

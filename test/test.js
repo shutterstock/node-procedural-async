@@ -54,7 +54,7 @@ describe("Basic OO", function(){
   it('should be an instance of the original class', function(done){
     Bernhard.async(function(){
       var book = Book.findByTitle('some title');
-      book.should.be.an.instanceof(Book);
+      (book instanceof Book).should.be.true;
       done()
     });    
   })

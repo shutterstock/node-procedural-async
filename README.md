@@ -34,7 +34,7 @@ Bernhard.async(function(){
 ```
 
 **[Full Example Code](https://github.com/shutterstock/node-procedural-async/tree/master/examples/favorite-books.js)**
-
+**[Example Using caolan's (excellent) async](https://github.com/shutterstock/node-procedural-async/tree/master/examples/using_async.js)**
 
 ## Features
 
@@ -76,11 +76,14 @@ Call this on the instance you got from *Bernhard.generate* when your asynchronou
 Put all your procedural-async code inside a function that you pass to this method. Inside this function, you can try/catch any errors.
 
 
-
 ## Authors
 
 This library was developed by [Ben Kovacevich](https://github.com/bkovacevich), [David Fenster](https://github.com/dfenster), and [Carlos Gomez](https://github.com/cgenuity) at [Shutterstock](http://www.shutterstock.com)
 
+
+## Acknowledgments
+
+This library would not be possible without [Marcel Laverdet's](https://github.com/laverdet) outstanding [fibers](https://github.com/laverdet/node-fibers) library.
 
 ## License
 

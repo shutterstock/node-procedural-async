@@ -30,13 +30,25 @@ async.auto({
       return cb(null, r);
     });
   }],
+  authors: ['book_results', function (cb, results) {
+    async.series(
+      results.book_results.map(function (book){return function (cb){
+        book.retrieveAuthor(function (e, r){
+          if (e) return cb(e);
+          book.author = r;
+          return cb(null, r);
+        });
+      }}),
+    cb);
+    };
+  }],
 }, function (e, r) {
   if (e) return next(e);
   var response_data = r.book_results.map(function(book){
     return {
       id: book.id,
       title: book.title,
-      author: book.retrieveAuthor().name,
+      author: book.author.name,
       is_favorite: r.favorite_book_ids.indexOf(book.id) > -1
     };
   });

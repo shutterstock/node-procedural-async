@@ -14,7 +14,7 @@ Bernhard.async(function(){
   // Will wait on results.
   var book_results = models.Book.search({genre: genre.id});
   var favorite_book_ids = current_user.retrieveFavoriteBookIds();
-  var response_data = book_results.valueOf().map(function(book){
+  var response_data = book_results.map(function(book){
     return {
       id: book.id,
       title: book.title,

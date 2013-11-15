@@ -28,6 +28,6 @@
     "url": "https://github.shuttercorp.net/bkovacevich/node-procedural-async/issues"
   },
   "scripts": {
-   "test": "node_modules/.bin/mocha -w"
+   "test": "node_modules/.bin/mocha -w --harmony"
  }
 }

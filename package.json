@@ -11,8 +11,7 @@
     "fibers": "git://github.com/laverdet/node-fibers.git"
   },
   "devDependencies": {
-   "mocha": "1.14.0",
-   "should": ">= 0.0.1"
+   "mocha": "1.14.0"
   },
   "main": "index.js",
   "engines": { "node": ">=0.11.8" },
@@ -29,6 +28,6 @@
     "url": "https://github.shuttercorp.net/bkovacevich/node-procedural-async/issues"
   },
   "scripts": {
-   "test": "node_modules/.bin/mocha -w"
+   "test": "node_modules/.bin/mocha -w --harmony"
  }
 }

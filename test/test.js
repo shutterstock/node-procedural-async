@@ -1,4 +1,5 @@
 'use strict';
+var assert = require('assert');
 var Bernhard = require('../lib');
 
 describe("Basic OO", function(){
@@ -41,21 +42,40 @@ describe("Basic OO", function(){
   it('should wait to complete before returning attribute values', function (done){
     Bernhard.async(function(){
       var book = Book.findByTitle('some title');
-      book.author.should.equal("Some Guy");
+      assert(book.author, "Some Guy");
       done();
     });
   });
   it('should allow for default values without waiting', function (done){
     Bernhard.async(function(){
-      new Book().author.should.equal("unknown");
+      assert(new Book().author, "unknown");
       done();
     });
   });
   it('should be an instance of the original class', function(done){
     Bernhard.async(function(){
       var book = Book.findByTitle('some title');
-      (book instanceof Book).should.be.true;
-      done()
+      assert(instanceof book, Book);
+      done();
     });    
   })
+});
+
+describe("Scalars", function(){
+  var slowAddTwoNumbers = function(first, second, callback){
+    var b = new Bernhard.generate(Number, false);
+    setTimeout(function(){
+      return callback(null, first + second);
+    }, 500);
+    return b;
+  };
+
+  it('should ', function(done){
+    Bernhard.async(function(){
+      var numero = new Bernhard.generate(Number);
+      slowAddTwoNumbers(2, 2, numero.callback);
+      assert(instanceof Number, numero);
+      done();
+    });
+  });
 });

@@ -1,7 +1,7 @@
 {
   "name": "procedural-async",    
   "description": "Write procedural style code that does async in the background",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": {
     "type": "git",
     "url": "git@github.shuttercorp.net:bkovacevich/node-procedural-async.git"

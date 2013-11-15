@@ -106,7 +106,7 @@ Author.retrieveById = function retrieveById(id){
 var mysql = {
   query: function(sql, params, callback){
     if(/ERROR/.test(params)){
-      throw "YOU SHALL NOT PASS!";
+      throw new Error("YOU SHALL NOT PASS!");
     } else if(/SOMETHING/.test(sql)){
       setTimeout(function(){
         return callback(null, [{title: params[0], author: "Some Guy"}])

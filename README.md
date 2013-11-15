@@ -56,10 +56,15 @@ The current version requires node.js **[v0.11.4](http://blog.nodejs.org/2013/07/
 ## Usage
 
 ### Setting Up Your Asynchronous Code
+#### Bernhard.generate(Class)
+Returns an instance that derives from *Class*. You should return this instance from your asynchronous function immediately.
 
-
+#### *instance*.callback([err, [result]])
+Call this on the instance you got from *Bernhard.generate* when your asynchronous function has completed.
 
 ### Using Your Asynchronous Code
+#### Bernhard.async(function)
+Put all your procedural-async code inside a function that you pass to this method. Inside this function, you can try/catch any errors.
 
 
 

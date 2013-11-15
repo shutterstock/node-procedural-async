@@ -53,7 +53,9 @@ Book.prototype.author = "unknown";
 
 var mysql = {
   query: function(sql, params, callback){
-    if(/SOMETHING/.test(sql)){
+    if(/ERROR/.test(params)){
+      throw "YOU SHALL NOT PASS!";
+    } else if(/SOMETHING/.test(sql)){
       setTimeout(function(){
         return callback(null, [{title: params[0], author: "Some Guy"}])
       }, 500);

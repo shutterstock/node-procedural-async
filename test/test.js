@@ -93,6 +93,28 @@ describe("Scalars", function(){
   });  
 });
 
+describe("Asynchronous", function(){
+  var times = [];
+  var slowReturn = function(value, time){
+    var b = new Bernhard.generate(Object);
+    times.push(time);
+    setTimeout(function(){
+      return b.callback(null, value);
+    }, 500);
+    return b;
+  };
+
+  it('should be asynchronous', function(done){
+    Bernhard.async(function(){
+      var b = slowReturn(10, new Date());
+      var b2 = slowReturn(20, new Date());
+      assert.equal(b2.valueOf() + b.valueOf(), 30);
+      assert(times[1] - times[0] < 100);
+      done();
+    });
+  });
+});
+
 describe("Arrays", function(){
   it('should generally work for arrays', function(done){
     Bernhard.async(function(){

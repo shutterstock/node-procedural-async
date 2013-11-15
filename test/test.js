@@ -106,4 +106,13 @@ describe("Arrays", function(){
       done();
     });
   })
-})
+});
+
+describe("Errors", function(){
+  it('should handle errors', function(done){
+    Bernhard.async(function(){
+      var books = Book.findByTitle('THROW_ERROR');
+      done();
+    });
+  });
+});

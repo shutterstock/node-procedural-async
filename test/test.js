@@ -103,7 +103,7 @@ describe("Scalars", function(){
       var btrue = slowReturn(true, Boolean);
       assert(bfalse instanceof Boolean);
       assert(btrue instanceof Boolean);
-      assert.equal(bfalse, false);
+      assert.equal(bfalse, true);
       assert.equal(btrue, true);
       done();
     });

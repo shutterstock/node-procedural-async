@@ -70,7 +70,7 @@ Put all your procedural-async code inside a function that you pass to this metho
 
 ## Authors
 
-This library was developed by Ben Kovacevich, David Fenster, and Carlos Gomez at [Shutterstock](http://www.shutterstock.com)
+This library was developed by @bkovacevich , @dfenster , @cgomez at [Shutterstock](http://www.shutterstock.com)
 
 
 ## License

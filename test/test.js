@@ -55,26 +55,26 @@ describe("Basic OO", function(){
   it('should be an instance of the original class', function(done){
     Bernhard.async(function(){
       var book = Book.findByTitle('some title');
-      assert(instanceof book, Book);
+      assert(book instanceof Book);
       done();
     });    
   })
 });
 
 describe("Scalars", function(){
-  var slowAddTwoNumbers = function(first, second, callback){
+  var slowAddTwoNumbers = function(first, second){
     var b = new Bernhard.generate(Number, false);
     setTimeout(function(){
-      return callback(null, first + second);
+      return b.callback(null, first + second);
     }, 500);
     return b;
   };
 
-  it('should ', function(done){
+  it('should be an instance of Number', function(done){
     Bernhard.async(function(){
-      var numero = new Bernhard.generate(Number);
-      slowAddTwoNumbers(2, 2, numero.callback);
-      assert(instanceof Number, numero);
+      var b = slowAddTwoNumbers(2, 2);
+      assert(b instanceof Number);
+      assert.equal(b, 4);
       done();
     });
   });

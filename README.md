@@ -51,6 +51,7 @@ The current version requires node.js **[v0.11.4](http://blog.nodejs.org/2013/07/
 * Install nvm: curl https://raw.github.com/creationix/nvm/master/install.sh | sh
 * Install node: nvm install 0.11.4
 * Install dependencies: npm install procedural-async
+* Run with harmony: node --harmony your_file.js
 
 
 ## Usage

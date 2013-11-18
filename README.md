@@ -34,6 +34,7 @@ Bernhard.async(function(){
 ```
 
 **[Full Example Code](https://github.com/shutterstock/node-procedural-async/tree/master/examples/favorite-books.js)**
+
 **[Example Using caolan's (excellent) async](https://github.com/shutterstock/node-procedural-async/tree/master/examples/using_async.js)**
 
 ## Features

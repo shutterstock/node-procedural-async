@@ -1,5 +1,5 @@
 {
-  "name": "procedural-async",    
+  "name": "procedural-async",
   "description": "Write procedural style code that does async in the background",
   "version": "0.0.4",
   "repository": {
@@ -11,10 +11,12 @@
     "fibers": "git://github.com/laverdet/node-fibers.git"
   },
   "devDependencies": {
-   "mocha": "1.14.0"
+    "mocha": "1.14.0"
   },
   "main": "index.js",
-  "engines": { "node": "=0.11.4" },
+  "engines": {
+    "node": "=0.11.4"
+  },
   "keywords": [
     "async",
     "futures",
@@ -23,11 +25,15 @@
     "fibers",
     "easy"
   ],
-  "contributors": ["dfenster", "cgomez"],
+  "contributors": [
+    "dfenster",
+    "cgomez"
+  ],
   "bugs": {
     "url": "https://github.com/shutterstock/node-procedural-async/issues"
   },
   "scripts": {
-   "test": "node_modules/.bin/mocha --harmony"
- }
+    "test": "node_modules/.bin/mocha --harmony"
+  },
+  "license": "MIT"
 }

@@ -35,5 +35,6 @@
   "scripts": {
     "test": "node_modules/.bin/mocha --harmony"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/shutterstock/node-procedural-async"
 }
